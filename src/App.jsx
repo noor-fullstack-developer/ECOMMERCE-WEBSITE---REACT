@@ -8,6 +8,9 @@ import "./App.css";
 
 
 function App() {
+
+    const [showRegister, setShowRegister] = useState(false);
+    
 return (
     <div className="flex justify-center items-center">
       <div className="bg-white rounded-xl shadow-lg p-0 m-0 w-full ">

@@ -18,7 +18,7 @@ const Navbar = () => {
             <img src={callicon} alt="call" className="h-4 font-bold" />
             <a
               href="tel:+919001001313"
-              className="text-xs font-bold text-gray-700"
+              className="text-xs font-medium text-gray-700"
             >
               +91-900-100-1313
             </a>
@@ -38,13 +38,13 @@ const Navbar = () => {
               <img
                 src={SearchIcon}
                 alt="search"
-                className="h-10 bg-gray-200 p-2 w-8 focus:outline-0 focus:border-0"
+                className="h-10 bg-gray-100 p-2 w-8 focus:outline-0 focus:border-0"
                 height="24"
                 width="55"
               />
               <input
                 type="search"
-                className="bg-gray-200 rounded p-2 h-10 text-sm"
+                className="bg-gray-100 rounded p-2 h-10 text-sm"
                 placeholder="Search..."
               />
             </div>

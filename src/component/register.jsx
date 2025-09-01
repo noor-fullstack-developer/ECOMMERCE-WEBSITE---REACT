@@ -3,57 +3,78 @@ import ring from "./assets/hidden.png";
 import ring1 from "./assets/hidden1.png";
 import angara from "./assets/angara.svg";
 import "./all.css";
+import { useState } from "react";
 
 const Register = () => {
-    const alt = () => {
-        button.classlist.add("hidden")
-    }
+  const [hidden, setHidden] = useState(false);
+  const [phone, setPhone] = useState("");
+  const [subscribe, setSubscribe] = useState(false);
+
+  if (hidden) return null;
+
+  const handleContinue = () => {
+    localStorage.setItem("register_phone", phone);
+    localStorage.setItem("register_subscribe", subscribe ? "true" : "false");
+    // continue logic here
+  };
+
   return (
-    <>
-      <div
-        style={{ backgroundImage: `url(${bg})` }}
-        className=" bg-no-repeat bg-cover flex justify-evenly align-middle fixed left-[25%] top-[25%] bottom-[35%] right-[25%] overflow-hidden rounded-2xl"
+    <div
+      style={{ backgroundImage: `url(${bg})` }}
+      className="bg-no-repeat bg-cover flex justify-evenly items-center fixed left-[25%] top-[25%] bottom-[35%] right-[25%] overflow-hidden rounded-2xl shadow-lg"
+    >
+      {/* Cross button at top right */}
+      <button
+        onClick={() => setHidden(true)}
+        type="button"
+        className="absolute top-4 right-4 text-gray-600 hover:text-black text-2xl font-bold bg-white bg-opacity-70 rounded-full w-10 h-10 flex items-center justify-center shadow"
+        aria-label="Close"
       >
-        <div>
-          <img src={ring} alt="" width={240} />
-          <img src={ring1} alt="" width={240} />
-        </div>
-        <div className="flex flex-col justify-center items-center">
-          <h2 className="font-bold text-sm">Welcome To</h2>
-          <img src={angara} alt="" className="h-12" />
-          <span className="text-gray-500 font-medium text-sm">
-            Get 5% additional discount on your first order
-          </span>
+        &times;
+      </button>
+      <div className="flex flex-col justify-center items-center gap-2">
+        <img src={ring} alt="Ring" width={180} className="mb-2" />
+        <img src={ring1} alt="Ring 1" width={180} />
+      </div>
+      <div className="flex flex-col justify-center items-center px-8 py-6 bg-white bg-opacity-80 rounded-xl">
+        <h2 className="font-bold text-lg mb-2">Welcome To</h2>
+        <img src={angara} alt="Angara Logo" className="h-12 mb-2" />
+        <span className="text-gray-500 font-medium text-sm mb-4 text-center">
+          Get 5% additional discount on your first order
+        </span>
+        <input
+          type="tel"
+          placeholder="+91 | Enter your mobile number*"
+          value={phone}
+          onChange={e => setPhone(e.target.value)}
+          className="border w-64 border-gray-400 rounded p-2 mt-2 focus:outline-none focus:border-blue-400"
+        />
+        <button
+          onClick={handleContinue}
+          type="button"
+          className="bg-gray-200 mt-5 rounded px-8 py-2 font-semibold hover:bg-gray-300 transition"
+        >
+          Continue
+        </button>
+        <span className="mt-5 text-sm text-gray-500 text-center">
+          By continuing, I agree to{" "}
+          <span className="text-black underline cursor-pointer">T&amp;C</span> &amp;{" "}
+          <span className="text-black underline cursor-pointer">Privacy Policy</span>
+        </span>
+        <div className="flex items-center gap-2 mt-5">
           <input
-            type="tel"
-            placeholder="+91 | Enter your mobile number*"
-            className="border-[1px] w-md border-gray-400 rounded p-2 pr-10 mt-5"
+            type="checkbox"
+            id="subscribe"
+            checked={subscribe}
+            onChange={() => setSubscribe(!subscribe)}
           />
-          <button
-            onClick={alt}
-            type="submit"
-            value="submit"
-            className="bg-gray-200 mt-5 rounded p-2 pr-47 pl-47"
-          >
-            Continue
-          </button>
-          <span className="mt-5 text-sm text-gray-500">
-            By Continuing,I agree to{" "}
-            <span className="text-black underline">T&C</span> &{" "}
-            <span className="text-black underline">Privacy Policy</span>
-          </span>
-          <div className="flex justify-center items-center gap-2 mt-5">
-            <input type="checkbox" name="" id="" />
-            <label htmlFor="checkbox" className="text-gray-500">
-              Subscribe for exclusive offers from Angara{" "}
-            </label>
-          </div>
+          <label htmlFor="subscribe" className="text-gray-500 cursor-pointer">
+            Subscribe for exclusive offers from Angara
+          </label>
         </div>
       </div>
-    </>
+    </div>
   );
 };
-
-
 
 export default Register;

@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "./src/component/img/braslet-01.png",
+    "image": "./src/component/img/ring-01.png",
     "name": "Dual Ring Diamond Mangalsutra 1",
     "price": 3290,
     "material": "18k Gold",
@@ -10,7 +10,7 @@
   },
   {
     "id": 2,
-    "image": "./src/component/img/braslet-02.png",
+    "image": "./src/component/img/ring-02.png",
     "name": "Silver Moonstone Pendant 2",
     "price": 1729,
     "material": "18k Gold",
@@ -19,7 +19,7 @@
   },
   {
     "id": 3,
-    "image": "./src/component/img/braslet-03.png",
+    "image": "./src/component/img/ring-03.png",
     "name": "Blue Topaz Heart Necklace 3",
     "price": 3339,
     "material": "22k Gold",
@@ -28,7 +28,7 @@
   },
   {
     "id": 4,
-    "image": "./src/component/img/braslet-04.png",
+    "image": "./src/component/img/ring-04.png",
     "name": "Gold Infinity Necklace 4",
     "price": 791,
     "material": "Platinum",
@@ -37,7 +37,7 @@
   },
   {
     "id": 5,
-    "image": "./src/component/img/braslet-05.png",
+    "image": "./src/component/img/ring-05.png",
     "name": "Diamond Mangalsutra 5",
     "price": 3050,
     "material": "Platinum",
@@ -46,7 +46,7 @@
   },
   {
     "id": 6,
-    "image": "./src/component/img/braslet-06.png",
+    "image": "./src/component/img/ring-06.png",
     "name": "Gold Infinity Necklace 6",
     "price": 3981,
     "material": "18k Gold",
@@ -55,7 +55,7 @@
   },
   {
     "id": 7,
-    "image": "./src/component/img/braslet-07.png",
+    "image": "./src/component/img/ring-07.png",
     "name": "Black Onyx Pendant 7",
     "price": 4221,
     "material": "18k Gold",
@@ -64,7 +64,7 @@
   },
   {
     "id": 8,
-    "image": "./src/component/img/braslet-08.png",
+    "image": "./src/component/img/ring-08.png",
     "name": "Black Onyx Pendant 8",
     "price": 3083,
     "material": "18k Gold",
