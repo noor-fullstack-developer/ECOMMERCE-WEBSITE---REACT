@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import callicon from "./assets/callicon.svg";
 import poster from "./assets/poster.webp";
 import FavirateIcon from "./assets/FavirateIcon.svg";
@@ -12,8 +13,9 @@ const Navbar = () => {
       <div className="bg-black text-white p-2 m-0 text-xs flex justify-center items-center">
         <p>Free Shipping | Free 15-Day Return</p>
       </div>
-      <div className="flex-col justify-between items-center  pt-3 ml-10 mr-10 ">
+      <div className="flex-col justify-between items-center pt-3 ml-10 mr-10">
         <div className="flex justify-between items-center mb-10">
+          {/* Contact */}
           <div className="flex gap-2 items-center">
             <img src={callicon} alt="call" className="h-4 font-bold" />
             <a
@@ -23,24 +25,27 @@ const Navbar = () => {
               +91-900-100-1313
             </a>
           </div>
+
+          {/* Logo */}
           <div className="logo">
-            <img
-              src={angara}
-              alt="logo"
-              className="h-12"
-              size="25vw"
-              width="172"
-              height="51"
-            />
+            <Link to="/">
+              <img
+                src={angara}
+                alt="logo"
+                className="h-12"
+                width="172"
+                height="51"
+              />
+            </Link>
           </div>
+
+          {/* Icons */}
           <div className="flex items-center gap-3 ">
             <div className="flex justify-center items-center overflow-hidden rounded-xl">
               <img
                 src={SearchIcon}
                 alt="search"
-                className="h-10 bg-gray-100 p-2 w-8 focus:outline-0 focus:border-0"
-                height="24"
-                width="55"
+                className="h-10 bg-gray-100 p-2 w-8"
               />
               <input
                 type="search"
@@ -51,17 +56,19 @@ const Navbar = () => {
             <img
               src={Usericon}
               alt="user"
-              className="h-7"
+              className="h-7 cursor-pointer"
               height="24"
               width="24"
             />
-            <img
-              src={FavirateIcon}
-              alt="favorite"
-              className="h-7"
-              height="24"
-              width="24"
-            />
+            <Link to="/cart">
+              <img
+                src={FavirateIcon}
+                alt="favorite"
+                className="h-7 cursor-pointer"
+                height="24"
+                width="24"
+              />
+            </Link>
             <img
               src={ShoppingbagIcon}
               alt="bag"
@@ -71,48 +78,59 @@ const Navbar = () => {
             />
           </div>
         </div>
+
+        {/* Menu */}
         <div className="flex justify-center p-1.5 mb-4">
           <ul className="flex items-center justify-evenly gap-20">
-            <li className="cursor-pointer text-sm hover:underline hover:text-yellow-600">
-              RINGS
+            <li>
+              <Link
+                to="/rings"
+                className="cursor-pointer text-sm hover:underline hover:text-yellow-600"
+              >
+                RINGS
+              </Link>
             </li>
-            <li className="cursor-pointer text-sm hover:underline hover:text-yellow-600">
-              NECKLACES
+            <li>
+              <Link
+                to="/necklaces"
+                className="cursor-pointer text-sm hover:underline hover:text-yellow-600"
+              >
+                NECKLACES
+              </Link>
             </li>
-            <li className="cursor-pointer text-sm hover:underline hover:text-yellow-600">
-              MANGALSUTRA
+            <li>
+              <Link
+                to="/mangalsutra"
+                className="cursor-pointer text-sm hover:underline hover:text-yellow-600"
+              >
+                MANGALSUTRA
+              </Link>
             </li>
-            <li className="cursor-pointer text-sm hover:underline hover:text-yellow-600">
-              EARRINGS
+            <li>
+              <Link
+                to="/earrings"
+                className="cursor-pointer text-sm hover:underline hover:text-yellow-600"
+              >
+                EARRINGS
+              </Link>
             </li>
-            <li className="cursor-pointer text-sm hover:underline hover:text-yellow-600">
-              BRACELETS
+            <li>
+              <Link
+                to="/bracelets"
+                className="cursor-pointer text-sm hover:underline hover:text-yellow-600"
+              >
+                BRACELETS
+              </Link>
             </li>
-            <li className="cursor-pointer text-sm hover:underline hover:text-yellow-600">
-              GIFTS
+            <li>
+              <Link
+                to="/gifts"
+                className="cursor-pointer text-sm hover:underline hover:text-yellow-600"
+              >
+                GIFTS
+              </Link>
             </li>
           </ul>
-        </div>
-      </div>
-      <img src={poster} alt="poster" className="w-full h-[268px]" />
-      <div className="text-grayscale-700 font-normal truncate text-ellipsis bg-grayscale-300 px-4 py-3 ">
-        <span
-          title="Home"
-          className="flex text-[10px] pt-3 pb-3 pl-4 pr-4 bg-gray-50 rounded-2xl"
-        >
-          Home / Jewellery / Rings
-        </span>
-      </div>
-      <div className="flex flex-col justify-center items-center mb-5 p-6 shadow-gray-300 shadow-sm pt-4 mt-4">
-        <h1 className="text-2xl flex justify-center items-center">Rings</h1>
-        <p className="flex justify-center items-center mt-4 text-gray-400">
-          Drape a piece of luxury around your finger with handcrafted rings from
-          Angara. Whether you're a fan o...
-        </p>
-        <div className="flex justify-center w-full mt-1 text-gray-600 pb-">
-          <button className="underline text-sm  cursor-pointer">
-            Read More
-          </button>
         </div>
       </div>
     </>

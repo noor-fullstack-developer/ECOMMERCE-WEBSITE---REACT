@@ -5,26 +5,46 @@ import sub from "/src/component/assets/sub.svg";
 
 const Filters = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const handleClick = () => {
     setIsOpen(!isOpen);
     console.log(isOpen ? "Add:" : "Sub:");
   };
 
   const [isopenJ, setIsopenJ] = useState(false);
-
   const handleclickJ = () => {
     setIsopenJ(!isopenJ);
     console.log(isopenJ ? "Add:" : "Sub:");
   };
-
-    const [isOpenP, setIsOpenP] = useState(false);
-
+  
+  const [isOpenP, setIsOpenP] = useState(false);
   const handleClickP = () => {
     setIsOpenP(!isOpenP);
     console.log(isOpenP ? "Add:" : "Sub:");
   };
 
+  const [isOpenW, setIsOpenW] = useState(false);
+  const handleClickW = () => {
+    setIsOpenW(!isOpenW);
+    console.log(isOpenW ? "Add:" : "Sub:");
+  };
+
+    const [isOpenC, setIsOpenC] = useState(false);
+  const handleClickC = () => {
+    setIsOpenC(!isOpenC);
+    console.log(isOpenC ? "Add:" : "Sub:");
+  };
+
+    const [isOpenG, setIsOpenG] = useState(false);
+  const handleClickG = () => {
+    setIsOpenG(!isOpenG);
+    console.log(isOpenG ? "Add:" : "Sub:");
+  };
+
+    const [isOpenS, setIsOpenS] = useState(false);
+  const handleClickS = () => {
+    setIsOpenS(!isOpenS);
+    console.log(isOpenS ? "Add:" : "Sub:");
+  };
   return (
     <>
       <div className="m-5 ml-1">
@@ -40,7 +60,7 @@ const Filters = () => {
           />
         </div>
         {isopenJ && (
-          <div className="ml-6 text-gray-600 flex flex-col gap-2">
+          <div className="ml-6 text-gray-600 flex flex-col gap-2 shadow-[0_1px_0_rgba(0,0,0,0.1)] ">
             <label className="font-thin font-[rubik] text-sm">
               <input type="checkbox" value="RING" className="mr-2" />
               RINGS
@@ -77,7 +97,7 @@ const Filters = () => {
 
         {/* Yeh content sirf tab dikhega jab isOpen true hoga */}
         {isOpen && (
-          <div className="ml-6 text-gray-600 flex flex-col gap-2">
+          <div className="ml-6 text-gray-600 flex flex-col gap-2 shadow-[0_1px_0_rgba(0,0,0,0.1)]">
             <label className="font-medium">
               <input type="checkbox" value="10000-20000" className="mr-2" />
               10,000-20,000
@@ -108,7 +128,7 @@ const Filters = () => {
         </div>
 
         {isOpenP && (
-          <div className="ml-6 text-gray-600 flex flex-col gap-2">
+          <div className="ml-6 text-gray-600 flex flex-col gap-2 shadow-[0_1px_0_rgba(0,0,0,0.1)]">
             <label className="font-thin font-[rubik] text-sm">
               <input type="checkbox" value="RING" className="mr-2" />
               14K Yellow gold
@@ -138,24 +158,149 @@ const Filters = () => {
 
         <div className="cursor-pointer flex justify-between items-center gap-15 mt-3 mb-6 ml-3  pb-4 font-[rubik] shadow-[0_1px_0_rgba(0,0,0,0.1)] ">
           <p className=" text-gray-700">Metal Weight</p>
-          <img src={add} alt="" />
+          <img
+            src={isOpenP ? sub : add}
+            alt="toggle"
+            className="w-5 h-5"
+            onClick={handleClickW}
+          />
         </div>
+
+        {isOpenW && (
+          <div className="ml-6 text-gray-600 flex flex-col gap-2 shadow-[0_1px_0_rgba(0,0,0,0.1)]">
+            <label className="font-thin font-[rubik] text-sm">
+              <input type="checkbox" value="RING" className="mr-2" />
+              Below 2 Grams
+            </label>
+            <label className="font-thin font-[rubik] text-sm ">
+              <input type="checkbox" value="NECKLACES" className="mr-2" />
+              2-4 Grams
+            </label>
+            <label className="font-thin font-[rubik] text-sm">
+              <input type="checkbox" value="MANGALSUTRAS" className="mr-2" />
+              4-6 Grams
+            </label>
+            <label className="font-thin font-[rubik] text-sm">
+              <input type="checkbox" value="EARRINGS" className="mr-2" />
+              6-8 Grams
+            </label>
+            <label className="font-thin font-[rubik] text-sm ">
+              <input type="checkbox" value="BRACELETS" className="mr-2" />
+              8-10 Grams
+            </label>
+            <label className="font-thin font-[rubik] text-sm ">
+              <input type="checkbox" value="BRACELETS" className="mr-2" />
+              10-20 Grams
+            </label>
+          </div>
+        )}
+
         <div className="cursor-pointer flex justify-between items-center gap-15 mt-3 mb-6 ml-3  pb-4 font-[rubik] shadow-[0_1px_0_rgba(0,0,0,0.1)] ">
           <p className=" text-gray-700">Carat Weight</p>
-          <img src={add} alt="" />
+          <img src={isOpenC ? sub : add}
+            alt="toggle"
+            className="w-5 h-5"
+            onClick={handleClickC} />
         </div>
+
+          {isOpenC && (
+            <div className="ml-6 text-gray-600 flex flex-col gap-2 shadow-[0_1px_0_rgba(0,0,0,0.1)]">
+              <label className="font-thin font-[rubik] text-sm">
+                <input type="checkbox" value="RING" className="mr-2" />
+                0.01 - 0.50
+              </label>
+              <label className="font-thin font-[rubik] text-sm ">
+                <input type="checkbox" value="NECKLACES" className="mr-2" />
+                0.51 - 1.00
+              </label>
+              <label className="font-thin font-[rubik] text-sm">
+                <input type="checkbox" value="MANGALSUTRAS" className="mr-2" />
+                1.01 - 1.50
+              </label>
+              <label className="font-thin font-[rubik] text-sm">
+                <input type="checkbox" value="EARRINGS" className="mr-2" />
+                1.51 - 3.00
+              </label>
+              <label className="font-thin font-[rubik] text-sm ">
+                <input type="checkbox" value="BRACELETS" className="mr-2" />
+                Over 3.01
+              </label>
+            </div>
+          )}
+        
         <div className="cursor-pointer flex justify-between items-center gap-15 mt-3 mb-6 ml-3  pb-4 font-[rubik] shadow-[0_1px_0_rgba(0,0,0,0.1)] ">
           <p className=" text-gray-700">Gemstone</p>
-          <img src={add} alt="" />
+          <img src={isOpenG ? sub : add}
+            alt="toggle"
+            className="w-5 h-5"
+            onClick={handleClickG} />
         </div>
+
+        {isOpenG && (
+          <div className="ml-6 text-gray-600 flex flex-col gap-2 shadow-[0_1px_0_rgba(0,0,0,0.1)]">
+            <label className="font-thin font-[rubik] text-sm">
+              <input type="checkbox" value="RING" className="mr-2" />
+              Amethyst
+            </label>
+            <label className="font-thin font-[rubik] text-sm ">
+              <input type="checkbox" value="NECKLACES" className="mr-2" />
+              Aquamarine
+            </label>
+            <label className="font-thin font-[rubik] text-sm">
+              <input type="checkbox" value="MANGALSUTRAS" className="mr-2" />
+              Black Onyx
+            </label>
+            <label className="font-thin font-[rubik] text-sm">
+              <input type="checkbox" value="EARRINGS" className="mr-2" />
+              Blue Sapphire
+            </label>
+            <label className="font-thin font-[rubik] text-sm ">
+              <input type="checkbox" value="BRACELETS" className="mr-2" />
+              Citrine
+            </label>
+            <label className="font-thin font-[rubik] text-sm ">
+              <input type="checkbox" value="BRACELETS" className="mr-2" />
+              Emerald
+            </label>
+          </div>
+        )}
+
         <div className="cursor-pointer flex justify-between items-center gap-15 mt-3 mb-6 ml-3  pb-4 font-[rubik] shadow-[0_1px_0_rgba(0,0,0,0.1)] ">
           <p className=" text-gray-700">Gemstone Shape</p>
-          <img src={add} alt="" />
+          <img src={isOpenS ? sub : add}
+            alt="toggle"
+            className="w-5 h-5"
+            onClick={handleClickS} />
         </div>
-        <div className="cursor-pointer flex justify-between items-center gap-15 mt-3 mb-6 ml-3  pb-4 font-[rubik] shadow-[0_1px_0_rgba(0,0,0,0.1)] ">
-          <p className=" text-gray-700">Jewellery Styles</p>
-          <img src={add} alt="" />
-        </div>
+
+        {isOpenS && (
+          <div className="ml-6 text-gray-600 flex flex-col gap-2 shadow-[0_1px_0_rgba(0,0,0,0.1)]">
+            <label className="font-thin font-[rubik] text-sm">
+              <input type="checkbox" value="RING" className="mr-2" />
+              Asscher
+            </label>
+            <label className="font-thin font-[rubik] text-sm ">
+              <input type="checkbox" value="NECKLACES" className="mr-2" />
+              Baguette
+            </label>
+            <label className="font-thin font-[rubik] text-sm">
+              <input type="checkbox" value="MANGALSUTRAS" className="mr-2" />
+              Cushion
+            </label>
+            <label className="font-thin font-[rubik] text-sm">
+              <input type="checkbox" value="EARRINGS" className="mr-2" />
+              Cushion Rectangular
+            </label>
+            <label className="font-thin font-[rubik] text-sm ">
+              <input type="checkbox" value="BRACELETS" className="mr-2" />
+              Emerald Cut
+            </label>
+            <label className="font-thin font-[rubik] text-sm ">
+              <input type="checkbox" value="BRACELETS" className="mr-2" />
+              Heart
+            </label>
+          </div>
+        )}
       </div>
     </>
   );

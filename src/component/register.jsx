@@ -21,7 +21,7 @@ const Register = () => {
   return (
     <div
       style={{ backgroundImage: `url(${bg})` }}
-      className="bg-no-repeat bg-cover flex justify-evenly items-center fixed left-[25%] top-[25%] bottom-[35%] right-[25%] overflow-hidden rounded-2xl shadow-lg"
+      className="bg-no-repeat bg-cover flex justify-evenly items-center fixed left-[20%] top-[20%] bottom-[35%] right-[20%] overflow-hidden rounded-2xl shadow-lg"
     >
       {/* Cross button at top right */}
       <button
@@ -34,9 +34,8 @@ const Register = () => {
       </button>
       <div className="flex flex-col justify-center items-center gap-2">
         <img src={ring} alt="Ring" width={180} className="mb-2" />
-        <img src={ring1} alt="Ring 1" width={180} />
       </div>
-      <div className="flex flex-col justify-center items-center px-8 py-6 bg-white bg-opacity-80 rounded-xl">
+      <div className="flex flex-col justify-center items-center px-8 py-6 bg-transparent bg-opacity-80 rounded-xl">
         <h2 className="font-bold text-lg mb-2">Welcome To</h2>
         <img src={angara} alt="Angara Logo" className="h-12 mb-2" />
         <span className="text-gray-500 font-medium text-sm mb-4 text-center">
