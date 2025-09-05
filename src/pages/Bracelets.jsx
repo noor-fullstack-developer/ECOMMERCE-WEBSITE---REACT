@@ -1,10 +1,8 @@
 import { useState , useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
 import poster from "../component/assets/poster.webp"
 import productsData from "../Data/products.json"
 import Cards from "../component/cards";
 import Filters from "../component/filters";
-import Register from "../component/register";
 import Cart from "./Cart";
 
 function Bracelets() {
@@ -16,6 +14,12 @@ function Bracelets() {
     setBrasletes(filtered);
   }, []);
 
+  const [Isvisible, setIsvisible] = useState(false)
+
+  const paravisible = () =>{
+    setIsvisible(!Isvisible)
+  }
+  
   return (
     <div className="flex  justify-center items-center">
       <div className="flex flex-col align-middle mt-8 pt-4 pr-8 pl-8 pb-4 ">
@@ -39,8 +43,9 @@ function Bracelets() {
             Drape a piece of luxury around your hand with handcrafted Bracletes
             from Angara. Whether you're a fan o...
           </p>
+          {Isvisible && ( <p className="flex justify-center items-center text-gray-400">this will show on click</p> )}
           <div className="flex justify-center w-full mt-1 text-gray-600">
-            <button className="underline text-sm cursor-pointer">
+            <button className="underline text-sm cursor-pointer" onClick={paravisible}>
               Read More
             </button>
           </div>
@@ -52,7 +57,7 @@ function Bracelets() {
           <div className="w-5/4">
             <div className="flex justify-between align-middle">
               <div className="flex align-middle">
-                <span className="text-xl">2614 Custom Bracletes</span>
+                <span className="text-xl">{Brasletes.length} Custom Bracletes</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -92,7 +97,6 @@ function Bracelets() {
               </div>
             </div>
             <div className="p-6">
-              <h2 className="text-xl mb-4">{Brasletes.length} Brasletes Found</h2>
               <Cards products={Brasletes} /> {/* ✅ Pass only rings */}
             </div>
           </div>

@@ -8,7 +8,7 @@ import Register from "../component/register";
 import Cart from "./Cart";
 
 function Gifts() {
-  const [rings, setRings] = useState([]);
+  const [Gift, setGift] = useState([]);
 
   return (
     <div className="flex  justify-center items-center">
@@ -30,7 +30,7 @@ function Gifts() {
         <div className="flex flex-col justify-center items-center mb-5 p-6 shadow-gray-300 shadow-sm pt-4 mt-4">
           <h1 className="text-2xl flex justify-center items-center">Gifts</h1>
           <p className="flex justify-center items-center mt-4 text-gray-400">
-            Drape a piece of luxury around your finger with handcrafted rings
+            Drape a piece of luxury around your finger with handcrafted Gift
             from Angara. Whether you're a fan o...
           </p>
           <div className="flex justify-center w-full mt-1 text-gray-600">
@@ -46,7 +46,7 @@ function Gifts() {
           <div className="w-5/4">
             <div className="flex justify-between align-middle">
               <div className="flex align-middle">
-                <span className="text-xl">Infinite(∞) Custmized Gifts</span>
+                <span className="text-xl">{productsData.length} Custmized Gifts</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -86,8 +86,7 @@ function Gifts() {
               </div>
             </div>
             <div className="p-6">
-              <h2 className="text-xl mb-4">{rings.length} Rings Found</h2>
-              <Cards products={productsData} /> {/* ✅ Pass only rings */}
+              <Cards products={productsData} /> {/* ✅ Pass only Gift */}
             </div>
           </div>
         </div>

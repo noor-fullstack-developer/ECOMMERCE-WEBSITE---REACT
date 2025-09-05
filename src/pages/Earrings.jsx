@@ -8,14 +8,20 @@ import Register from "../component/register";
 import Cart from "./Cart";
 
 function Earring() {
-  const [rings, setRings] = useState([]);
+  const [earrings, setEarrings] = useState([]);
 
   useEffect(() => {
     // filter only rings
     const filtered = productsData.filter((p) => p.category === "earring");
-    setRings(filtered);
+    setEarrings(filtered);
   }, []);
 
+  const [Isvisible, setIsvisible] = useState(false)
+
+  const paravisible = () =>{
+    setIsvisible(!Isvisible)
+  }
+  
   return (
     <div className="flex  justify-center items-center">
       <div className="flex flex-col align-middle mt-8 pt-4 pr-8 pl-8 pb-4 ">
@@ -28,19 +34,20 @@ function Earring() {
             title="Home"
             className="flex text-[10px] pt-3 pb-3 pl-4 pr-4 bg-gray-50 rounded-2xl"
           >
-            Home / Jewellery / Rings
+            Home / Jewellery / Earrings
           </span>
         </div>
 
         {/* Section */}
         <div className="flex flex-col justify-center items-center mb-5 p-6 shadow-gray-300 shadow-sm pt-4 mt-4">
-          <h1 className="text-2xl flex justify-center items-center">Rings</h1>
+          <h1 className="text-2xl flex justify-center items-center">Earrings</h1>
           <p className="flex justify-center items-center mt-4 text-gray-400">
-            Drape a piece of luxury around your finger with handcrafted rings
+            Drape a piece of luxury around your ear with handcrafted earrings
             from Angara. Whether you're a fan o...
           </p>
+          {Isvisible && ( <p className="flex justify-center items-center text-gray-400">this will show on click</p> )}
           <div className="flex justify-center w-full mt-1 text-gray-600">
-            <button className="underline text-sm cursor-pointer">
+            <button className="underline text-sm cursor-pointer" onClick={paravisible}>
               Read More
             </button>
           </div>
@@ -52,7 +59,7 @@ function Earring() {
           <div className="w-5/4">
             <div className="flex justify-between align-middle">
               <div className="flex align-middle">
-                <span className="text-xl">2614 Custom Rings</span>
+                <span className="text-xl">{earrings.length} Custom Earrings</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -92,8 +99,7 @@ function Earring() {
               </div>
             </div>
             <div className="p-6">
-              <h2 className="text-xl mb-4">{rings.length} Rings Found</h2>
-              <Cards products={rings} /> {/* ✅ Pass only rings */}
+              <Cards products={earrings} /> {/* ✅ Pass only earrings */}
             </div>
           </div>
         </div>

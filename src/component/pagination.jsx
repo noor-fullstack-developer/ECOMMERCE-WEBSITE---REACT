@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 const Pagination = () => {
     const [currentpage, setcurrentpage] = useState(1);
-  const [itemperpage, setitemperpage] = useState(8);
+  const [itemperpage, setitemperpage] = useState(4);
 
   const lastpageindx = currentpage * itemperpage;
   const firstpageindx = currentpage - lastpageindx;

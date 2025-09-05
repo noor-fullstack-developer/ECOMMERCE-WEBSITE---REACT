@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import callicon from "./assets/callicon.svg";
-import poster from "./assets/poster.webp";
-import FavirateIcon from "./assets/FavirateIcon.svg";
+import FavirateIcon from "./assets/non-fav.svg";
 import SearchIcon from "./assets/SearchIcon.svg";
 import ShoppingbagIcon from "./assets/ShoppingbagIcon.svg";
 import Usericon from "./assets/Usericon.svg";
@@ -20,7 +19,7 @@ const Navbar = () => {
             <img src={callicon} alt="call" className="h-4 font-bold" />
             <a
               href="tel:+919001001313"
-              className="text-xs font-medium text-gray-700"
+              className="text-xs font-medium text-gray-700 hover:underline"
             >
               +91-900-100-1313
             </a>
@@ -32,7 +31,7 @@ const Navbar = () => {
               <img
                 src={angara}
                 alt="logo"
-                className="h-12"
+                className="h-12 ml-50"
                 width="172"
                 height="51"
               />

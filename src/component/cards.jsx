@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import detailIcon from "./assets/detail.svg";
-import FavirateIcon from "./assets/FavirateIcon.svg";
+import nonFavirateIcon from "./assets/non-fav.svg";
+import FavirateIcon from "./assets/fav.svg";
 
 const Cards = ({ products }) => {
   const [currentpage, setcurrentpage] = useState(1);
@@ -46,17 +47,17 @@ const Cards = ({ products }) => {
         <button
           onClick={handlePrev}
           disabled={currentpage === 1}
-          className="px-3 py-1 border rounded disabled:opacity-50"
+          className="px-4 py-0 bg-gradient-to-r from-red-400 to-indigo-300 rounded disabled:opacity-50"
         >
           Prev
         </button>
-        <span>
+        <span className="rounded bg-gradient-to-r from-indigo-400 via-gray-100 to-indigo-400">
           Page {currentpage} of {totalPages}
         </span>
         <button
           onClick={handleNext}
           disabled={currentpage === totalPages}
-          className="px-3 py-1 border rounded disabled:opacity-50"
+          className="px-4 py-0 bg-gradient-to-l from-red-400 to-indigo-300 rounded disabled:opacity-50"
         >
           Next
         </button>

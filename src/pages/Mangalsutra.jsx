@@ -1,7 +1,6 @@
 import { useState , useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-
-import poster from "../component/assets/poster.png";
+import poster from "../component/assets/poster.webp"
 import productsData from "../Data/products.json"
 import Cards from "../component/cards";
 import Filters from "../component/filters";
@@ -12,14 +11,20 @@ function Mangalsutra() {
   const [mangalsutra, setMangalsutra] = useState([]);
 
   useEffect(() => {
-    // filter only rings
+    // filter only mangalsutra
     const filtered = productsData.filter((p) => p.category === "mangalsutra");
     setMangalsutra(filtered);
   }, []);
 
+  const [Isvisible, setIsvisible] = useState(false)
+
+  const paravisible = () =>{
+    setIsvisible(!Isvisible)
+  }
+  
   return (
-    <div className="flex flex-col justify-center items-center">
-      <div className="flex flex-col align-middle w-screen mt-8 pt-4 pr-8 pl-8 pb-4 ">
+    <div className="flex  justify-center items-center">
+      <div className="flex flex-col align-middle mt-8 pt-4 pr-8 pl-8 pb-4 ">
         {/* Poster */}
         <img src={poster} alt="poster" className="w-full h-[268px]" />
 
@@ -29,33 +34,32 @@ function Mangalsutra() {
             title="Home"
             className="flex text-[10px] pt-3 pb-3 pl-4 pr-4 bg-gray-50 rounded-2xl"
           >
-            Home / Jewellery / Gifts
+            Home / Jewellery / Mangalsutra
           </span>
         </div>
 
         {/* Section */}
         <div className="flex flex-col justify-center items-center mb-5 p-6 shadow-gray-300 shadow-sm pt-4 mt-4">
-          <h1 className="text-2xl flex justify-center items-center">Gifts</h1>
+          <h1 className="text-2xl flex justify-center items-center">Mangalsutra</h1>
           <p className="flex justify-center items-center mt-4 text-gray-400">
-            Drape a piece of luxury around your finger with handcrafted rings
+            Drape a piece of luxury around your finger with handcrafted Mangalsutra
             from Angara. Whether you're a fan o...
           </p>
+          {Isvisible && ( <p className="flex justify-center items-center text-gray-400">this will show on click</p> )}
           <div className="flex justify-center w-full mt-1 text-gray-600">
-            <button className="underline text-sm cursor-pointer">
+            <button className="underline text-sm cursor-pointer" onClick={paravisible}>
               Read More
             </button>
           </div>
         </div>
-        </div>
-      <div className="bg-white rounded-xl shadow-lg p-0 m-0 w-full ">
-        <div className="flex align-middle mt-8 pt-4 pr-8 pl-8 pb-4 ">
+        <div className="bg-white rounded-xl shadow-lg p-0 m-0 w-full flex felx-col">
           <div className="w-1/4">
             <Filters />
           </div>
           <div className="w-5/4">
             <div className="flex justify-between align-middle">
               <div className="flex align-middle">
-                <span className="text-xl">2614 Custom Rings</span>
+                <span className="text-xl">{mangalsutra.length} Custom Mangalsutra</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -95,8 +99,7 @@ function Mangalsutra() {
               </div>
             </div>
             <div className="p-6">
-              <h2 className="text-xl mb-4">{mangalsutra.length} Mangalsutras Found</h2>
-              <Cards products={mangalsutra} /> {/* ✅ Pass only rings */}
+              <Cards products={mangalsutra} /> {/* ✅ Pass only Mangalsutra */}
             </div>
           </div>
         </div>
