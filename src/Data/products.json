@@ -87,6 +87,7 @@
     "stone": "Moonstone",
     "description": "A beautifully designed piece of jewelry with premium craftsmanship.",
     "category": "rings",
+    "grade": "great",
     "image": "./src/data/img/ring-09.png"
   },
   {
@@ -137,6 +138,7 @@
     "stone": "Moonstone",
     "description": "A beautifully designed piece of jewelry with premium craftsmanship.",
     "category": "rings",
+    "categorie": "favorite",
     "image": "./src/data/img/ring-14.png"
   },
   {
@@ -177,6 +179,7 @@
     "stone": "Moonstone",
     "description": "A beautifully designed piece of jewelry with premium craftsmanship.",
     "category": "rings",
+    "categorie": "favorite",
     "image": "./src/data/img/ring-18.png"
   },
   {
@@ -297,6 +300,7 @@
     "stone": "Topaz",
     "description": "A beautifully designed piece of jewelry with premium craftsmanship.",
     "category": "Necklace",
+    "categorie": "favorite",
     "image": "./src/Data/img/Necklace-10.png"
   },
   {
@@ -307,6 +311,7 @@
     "stone": "Emerald",
     "description": "A beautifully designed piece of jewelry with premium craftsmanship.",
     "category": "Necklace",
+    "categorie": "favorite",
     "image": "./src/Data/img/Necklace-11.png"
   },
   {
@@ -417,6 +422,7 @@
     "stone": "Emerald",
     "description": "A beautifully designed piece of jewelry with premium craftsmanship.",
     "category": "mangalsutra",
+    "categorie": "favorite",
     "image": "./src/data/img/mangalsutra-02.png"
   },
   {
@@ -437,6 +443,7 @@
     "stone": "Topaz",
     "description": "A beautifully designed piece of jewelry with premium craftsmanship.",
     "category": "mangalsutra",
+    "categorie": "favorite",
     "image": "./src/data/img/mangalsutra-04.png"
   },
   {
@@ -487,6 +494,7 @@
     "stone": "None",
     "description": "A beautifully designed piece of jewelry with premium craftsmanship.",
     "category": "mangalsutra",
+    "grade": "great",
     "image": "./src/data/img/mangalsutra-09.png"
   },
   {
@@ -607,6 +615,8 @@
     "stone": "Diamond",
     "description": "A beautifully designed piece of jewelry with premium craftsmanship.",
     "category": "earring",
+    "categorie": "favorite",
+    "grade": "great",
     "image": "./src/data/img/earring-01.png"
   },
   {
@@ -647,6 +657,7 @@
     "stone": "Sapphire",
     "description": "A beautifully designed piece of jewelry with premium craftsmanship.",
     "category": "earring",
+    "categorie": "favorite",
     "image": "./src/data/img/earring-05.png"
   },
   {
@@ -807,6 +818,7 @@
     "stone": "Sapphire",
     "description": "A beautifully designed piece of jewelry with premium craftsmanship.",
     "category": "braslet",
+    "categorie": "favorite",
     "image": "./src/data/img/braslet-01.png"
   },
   {
@@ -857,6 +869,8 @@
     "stone": "None",
     "description": "A beautifully designed piece of jewelry with premium craftsmanship.",
     "category": "braslet",
+    "categorie": "favorite",
+    "grade": "great",
     "image": "./src/data/img/braslet-06.png"
   },
   {
