@@ -1,74 +1,35 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Imageslider = () => {
-  const Imageslides = [
-    { URL: "../Data/img.home/poster01.webp" },
-    { URL: "../Data/img.home/poster02.webp" },
-    { URL: "../Data/img.home/poster03.webp" },
-  ];
+import poster01 from "../Data/img.home/poster01.png";
+import poster02 from "../Data/img.home/poster02.png";
+import poster03 from "../Data/img.home/poster03.png";
 
-  const [current, setCurrent] = useState(0);
+const sliders = [poster01, poster02, poster03];
 
-  const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % Imageslides.length);
-  };
+const AutoCarousel = () => {
+  const [index, setIndex] = useState(0);
+  const [fade, setFade] = useState(true);
 
-  const prevSlide = () => {
-    setCurrent((prev) => (prev - 1 + Imageslides.length) % Imageslides.length);
-  };
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setIndex((prev) => (prev + 1) % sliders.length);
+        setFade(true);
+      }, 300); // fade out duration
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
-    <div
-      style={{
-        position: "relative",
-        width: "500px",
-        height: "300px",
-        margin: "auto",
-      }}
-    >
+    <div className="relative w-full h-auto">
       <img
-        src={Imageslides[current].URL}
-        alt={`slide-${current}`}
-        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        src={sliders[index]}
+        alt={`Slide ${index + 1}`}
+        className={`w-full h-full object-cover rounded-lg transition-opacity duration-500 ${fade ? "opacity-100" : "opacity-50"}`}
       />
-      <button
-        onClick={prevSlide}
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "10px",
-          transform: "translateY(-50%)",
-          background: "rgba(0,0,0,0.5)",
-          color: "#fff",
-          border: "none",
-          borderRadius: "50%",
-          width: "30px",
-          height: "30px",
-          cursor: "pointer",
-        }}
-      >
-        &#8592;
-      </button>
-      <button
-        onClick={nextSlide}
-        style={{
-          position: "absolute",
-          top: "50%",
-          right: "10px",
-          transform: "translateY(-50%)",
-          background: "rgba(0,0,0,0.5)",
-          color: "#fff",
-          border: "none",
-          borderRadius: "50%",
-          width: "30px",
-          height: "30px",
-          cursor: "pointer",
-        }}
-      >
-        &#8594;
-      </button>
     </div>
   );
 };
 
-export default Imageslider;
+export default AutoCarousel;
