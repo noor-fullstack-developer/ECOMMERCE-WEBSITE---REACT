@@ -7,43 +7,39 @@ const Filters = () => {
   const [isOpen, setIsOpen] = useState(false);
   const handleClick = () => {
     setIsOpen(!isOpen);
-    console.log(isOpen ? "Add:" : "Sub:");
+    if (!isOpen) {
+      
+    }
   };
 
   const [isopenJ, setIsopenJ] = useState(false);
   const handleclickJ = () => {
     setIsopenJ(!isopenJ);
-    console.log(isopenJ ? "Add:" : "Sub:");
   };
-  
+
   const [isOpenP, setIsOpenP] = useState(false);
   const handleClickP = () => {
     setIsOpenP(!isOpenP);
-    console.log(isOpenP ? "Add:" : "Sub:");
   };
 
   const [isOpenW, setIsOpenW] = useState(false);
   const handleClickW = () => {
     setIsOpenW(!isOpenW);
-    console.log(isOpenW ? "Add:" : "Sub:");
   };
 
-    const [isOpenC, setIsOpenC] = useState(false);
+  const [isOpenC, setIsOpenC] = useState(false);
   const handleClickC = () => {
     setIsOpenC(!isOpenC);
-    console.log(isOpenC ? "Add:" : "Sub:");
   };
 
-    const [isOpenG, setIsOpenG] = useState(false);
+  const [isOpenG, setIsOpenG] = useState(false);
   const handleClickG = () => {
     setIsOpenG(!isOpenG);
-    console.log(isOpenG ? "Add:" : "Sub:");
   };
 
-    const [isOpenS, setIsOpenS] = useState(false);
+  const [isOpenS, setIsOpenS] = useState(false);
   const handleClickS = () => {
     setIsOpenS(!isOpenS);
-    console.log(isOpenS ? "Add:" : "Sub:");
   };
   return (
     <>
@@ -197,43 +193,47 @@ const Filters = () => {
 
         <div className="cursor-pointer flex justify-between items-center gap-15 mt-3 mb-6 ml-3  pb-4 font-[rubik] shadow-[0_1px_0_rgba(0,0,0,0.1)] ">
           <p className=" text-gray-700">Carat Weight</p>
-          <img src={isOpenC ? sub : add}
+          <img
+            src={isOpenC ? sub : add}
             alt="toggle"
             className="w-5 h-5"
-            onClick={handleClickC} />
+            onClick={handleClickC}
+          />
         </div>
 
-          {isOpenC && (
-            <div className="ml-6 text-gray-600 flex flex-col gap-2 shadow-[0_1px_0_rgba(0,0,0,0.1)]">
-              <label className="font-thin font-[rubik] text-sm">
-                <input type="checkbox" value="RING" className="mr-2" />
-                0.01 - 0.50
-              </label>
-              <label className="font-thin font-[rubik] text-sm ">
-                <input type="checkbox" value="NECKLACES" className="mr-2" />
-                0.51 - 1.00
-              </label>
-              <label className="font-thin font-[rubik] text-sm">
-                <input type="checkbox" value="MANGALSUTRAS" className="mr-2" />
-                1.01 - 1.50
-              </label>
-              <label className="font-thin font-[rubik] text-sm">
-                <input type="checkbox" value="EARRINGS" className="mr-2" />
-                1.51 - 3.00
-              </label>
-              <label className="font-thin font-[rubik] text-sm ">
-                <input type="checkbox" value="BRACELETS" className="mr-2" />
-                Over 3.01
-              </label>
-            </div>
-          )}
-        
+        {isOpenC && (
+          <div className="ml-6 text-gray-600 flex flex-col gap-2 shadow-[0_1px_0_rgba(0,0,0,0.1)]">
+            <label className="font-thin font-[rubik] text-sm">
+              <input type="checkbox" value="RING" className="mr-2" />
+              0.01 - 0.50
+            </label>
+            <label className="font-thin font-[rubik] text-sm ">
+              <input type="checkbox" value="NECKLACES" className="mr-2" />
+              0.51 - 1.00
+            </label>
+            <label className="font-thin font-[rubik] text-sm">
+              <input type="checkbox" value="MANGALSUTRAS" className="mr-2" />
+              1.01 - 1.50
+            </label>
+            <label className="font-thin font-[rubik] text-sm">
+              <input type="checkbox" value="EARRINGS" className="mr-2" />
+              1.51 - 3.00
+            </label>
+            <label className="font-thin font-[rubik] text-sm ">
+              <input type="checkbox" value="BRACELETS" className="mr-2" />
+              Over 3.01
+            </label>
+          </div>
+        )}
+
         <div className="cursor-pointer flex justify-between items-center gap-15 mt-3 mb-6 ml-3  pb-4 font-[rubik] shadow-[0_1px_0_rgba(0,0,0,0.1)] ">
           <p className=" text-gray-700">Gemstone</p>
-          <img src={isOpenG ? sub : add}
+          <img
+            src={isOpenG ? sub : add}
             alt="toggle"
             className="w-5 h-5"
-            onClick={handleClickG} />
+            onClick={handleClickG}
+          />
         </div>
 
         {isOpenG && (
@@ -267,10 +267,12 @@ const Filters = () => {
 
         <div className="cursor-pointer flex justify-between items-center gap-15 mt-3 mb-6 ml-3  pb-4 font-[rubik] shadow-[0_1px_0_rgba(0,0,0,0.1)] ">
           <p className=" text-gray-700">Gemstone Shape</p>
-          <img src={isOpenS ? sub : add}
+          <img
+            src={isOpenS ? sub : add}
             alt="toggle"
             className="w-5 h-5"
-            onClick={handleClickS} />
+            onClick={handleClickS}
+          />
         </div>
 
         {isOpenS && (

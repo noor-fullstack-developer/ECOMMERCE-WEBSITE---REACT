@@ -169,6 +169,7 @@
     "stone": "Moonstone",
     "description": "A beautifully designed piece of jewelry with premium craftsmanship.",
     "category": "rings",
+    "categorie": "favorite",
     "image": "./src/data/img/ring-17.png"
   },
   {
@@ -179,7 +180,6 @@
     "stone": "Moonstone",
     "description": "A beautifully designed piece of jewelry with premium craftsmanship.",
     "category": "rings",
-    "categorie": "favorite",
     "image": "./src/data/img/ring-18.png"
   },
   {
@@ -289,7 +289,7 @@
     "material": "Sterling Silver",
     "stone": "Sapphire",
     "description": "A beautifully designed piece of jewelry with premium craftsmanship.",
-    "category": "Necklace",
+    "category": "Necklace",                                 
     "image": "./src/Data/img/Necklace-09.png"
   },
   {

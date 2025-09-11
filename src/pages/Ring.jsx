@@ -1,7 +1,7 @@
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import poster from "../component/assets/poster.webp"
-import productsData from "../Data/products.json"
+import poster from "../component/assets/poster.webp";
+import productsData from "../Data/products.json";
 import Cards from "../component/cards";
 import Filters from "../component/filters";
 import Register from "../component/register";
@@ -16,11 +16,11 @@ function Ring() {
     setRing(filtered);
   }, []);
 
-  const [Isvisible, setIsvisible] = useState(false)
+  const [Isvisible, setIsvisible] = useState(false);
 
-  const paravisible = () =>{
-    setIsvisible(!Isvisible)
-  }
+  const paravisible = () => {
+    setIsvisible(!Isvisible);
+  };
 
   return (
     <div className="flex  justify-center items-center">
@@ -31,7 +31,7 @@ function Ring() {
         {/* Breadcrumb */}
         <div className="text-grayscale-700 font-normal truncate bg-grayscale-300 px-4 py-3">
           <span
-            title="Home"
+            title="Rings"
             className="flex text-[10px] pt-3 pb-3 pl-4 pr-4 bg-gray-50 rounded-2xl"
           >
             Home / Jewellery / Rings
@@ -43,11 +43,18 @@ function Ring() {
           <h1 className="text-2xl flex justify-center items-center">Rings</h1>
           <p className="flex justify-center items-center mt-4 text-gray-400">
             Drape a piece of luxury around your finger with handcrafted rings
-            from Angara. Whether you're a fan of 
+            from Angara. Whether you're a fan of
           </p>
-            {Isvisible && ( <p className="flex justify-center items-center text-gray-400">this will show on click</p> )}
+          {Isvisible && (
+            <p className="flex justify-center items-center text-gray-400">
+              this will show on click
+            </p>
+          )}
           <div className="flex justify-center w-full mt-1 text-gray-600">
-            <button className="underline text-sm cursor-pointer" onClick={paravisible}>
+            <button
+              className="underline text-sm cursor-pointer"
+              onClick={paravisible}
+            >
               Read More
             </button>
           </div>

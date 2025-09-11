@@ -63,6 +63,28 @@ const Home = () => {
     setgreat(filtered);
   }, []);
 
+  useEffect(() => {
+    const storedFavorite = localStorage.getItem("favorite");
+    if (storedFavorite) {
+      setfavorite(JSON.parse(storedFavorite));
+    } else {
+      const filtered = productsData.filter((p) => p.categorie === "favorite");
+      setfavorite(filtered);
+      localStorage.setItem("favorite", JSON.stringify(filtered));
+    }
+  }, []);
+
+  useEffect(() => {
+    const storedGreat = localStorage.getItem("great");
+    if (storedGreat) {
+      setgreat(JSON.parse(storedGreat));
+    } else {
+      const filtered = productsData.filter((p) => p.grade === "great");
+      setgreat(filtered);
+      localStorage.setItem("great", JSON.stringify(filtered));
+    }
+  }, []);
+
   return (
     <>
       <div className="flex flex-col items-center w-screen justify-center">
@@ -169,7 +191,7 @@ const Home = () => {
           </div>
 
           {/* This cointain side and video of home */}
-          <div className=" flex align-middle w-screen mt-20 items-center ">
+          <div className=" flex align-middle w-screen  mt-20 items-center ">
             <div className="w-2/4">
               <video
                 autoPlay
@@ -203,32 +225,29 @@ const Home = () => {
             Gift That Say It All
           </span>
           <div className="my-10 flex justify-center align-middle items-center gap-5 ">
-            <div
-              className="flex flex-col items-center text-gray-600 text-lg
-            h-50 "
-            >
-              <img src={Gif1} alt="" className="h-50 hover:scale-90 " />
-              below 25,000
+            <div className="flex flex-col items-center text-gray-600 text-lg h-50 hover:underline  ">
+              <img src={Gif1} alt="" className="h-50 hover:scale-105 " />
+              <p > below 25,000</p>
             </div>
-            <div className="flex flex-col items-center text-gray-600 text-lg h-50">
-              <img src={Gif2} alt="" className="h-50 hover:scale-90 " />
-              25,000 - 50,000
+            <div className="flex flex-col items-center text-gray-600 text-lg h-50 hover:underline ">
+              <img src={Gif2} alt="" className="h-50 hover:scale-105 " />
+              <p > 25,000 - 50,000</p>
             </div>
-            <div className="flex flex-col items-center text-gray-600 text-lg h-50">
-              <img src={Gif3} alt="" className="h-50 hover:scale-90 " />
-              50,000 - 1,00,000
+            <div className="flex flex-col items-center text-gray-600 text-lg h-50 hover:underline ">
+              <img src={Gif3} alt="" className="h-50 hover:scale-105 " />
+              <p > 50,000 - 1,00,000</p>
             </div>
-            <div className="flex flex-col items-center text-gray-600 text-lg h-50">
-              <img src={Gif4} alt="" className="h-50 hover:scale-90 " />
-              Above 1,00,000
+            <div className="flex flex-col items-center text-gray-600 text-lg h-50 hover:underline ">
+              <img src={Gif4} alt="" className="h-50 hover:scale-105 " />
+              <p > Above 1,00,000</p>
             </div>
-            <div className="flex flex-col items-center text-gray-600 text-lg h-50">
-              <img src={Gif5} alt="" className="h-50 hover:scale-90 " />
-              Birthday Gifts
+            <div className="flex flex-col items-center text-gray-600 text-lg h-50 hover:underline ">
+              <img src={Gif5} alt="" className="h-50 hover:scale-105 " />
+              <p > Birthday Gifts</p>
             </div>
-            <div className="flex flex-col items-center text-gray-600 text-lg h-50">
-              <img src={Gif6} alt="" className="h-50 hover:scale-90 " />
-              Anniversary Gifts
+            <div className="flex flex-col items-center text-gray-600 text-lg h-50 hover:underline ">
+              <img src={Gif6} alt="" className="h-50 hover:scale-105 " />
+              <p >Anniversary Gifts</p>
             </div>
           </div>
           {/* this is for occassion */}
@@ -249,51 +268,51 @@ const Home = () => {
             Make Birthdays More Colourful
           </span>
           <div className="flex justify-evenly align-middle items-center">
-            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-110 ">
+            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-105 ">
               <img src={jan} alt="" />
               January
             </div>
-            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-110 ">
+            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-105 ">
               <img src={feb} alt="" />
               February
             </div>
-            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-110 ">
+            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-105 ">
               <img src={mar} alt="" />
               March
             </div>
-            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-110 ">
+            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-105 ">
               <img src={apr} alt="" />
               April
             </div>
-            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-110 ">
+            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-105 ">
               <img src={may} alt="" />
               May
             </div>
-            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-110 ">
+            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-105 ">
               <img src={jun} alt="" />
               June
             </div>
-            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-110 ">
+            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-105 ">
               <img src={jul} alt="" />
               July
             </div>
-            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-110 ">
+            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-105 ">
               <img src={aug} alt="" />
               August
             </div>
-            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-110 ">
+            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-105 ">
               <img src={sep} alt="" />
               September
             </div>
-            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-110 ">
+            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-105 ">
               <img src={oct} alt="" />
               October
             </div>
-            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-110 ">
+            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-105 ">
               <img src={nov} alt="" />
               November
             </div>
-            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-110 ">
+            <div className="flex flex-col items-center hover:underline decoration-orange-400  hover:scale-105 ">
               <img src={dec} alt="" />
               December
             </div>

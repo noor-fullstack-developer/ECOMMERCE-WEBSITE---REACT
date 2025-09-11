@@ -1,8 +1,15 @@
+import React from "react";
+import navbar from "../component/navbar.jsx";
+
 const Cart = () => {
   return (
-    <div className="p-6">
-      <h1 className="text-xl font-bold">Your Cart</h1>
-      <p className="mt-4 text-gray-600">No items in the cart yet.</p>
+    <div className="flex justify-center">
+      <div>
+        <h1>My Wishlist</h1>
+        <div>
+          
+        </div>
+      </div>
     </div>
   );
 };

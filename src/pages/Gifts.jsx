@@ -19,7 +19,7 @@ function Gifts() {
         {/* Breadcrumb */}
         <div className="text-grayscale-700 font-normal truncate bg-grayscale-300 px-4 py-3">
           <span
-            title="Home"
+            title="Gifts"
             className="flex text-[10px] pt-3 pb-3 pl-4 pr-4 bg-gray-50 rounded-2xl"
           >
             Home / Jewellery / Gifts
